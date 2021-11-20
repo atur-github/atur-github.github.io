@@ -233,7 +233,7 @@ footer.sidebar-footer {
 .main-panel {
     background-color: var(--main-bg-color);
     flex-grow: 1;
-    padding-bottom: 2rem;
+    padding-bottom: 0;
 }
 
 .top-header {
