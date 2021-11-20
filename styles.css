@@ -511,7 +511,7 @@ footer.sidebar-footer {
     }
 
     .notes-wrapper {
-        padding-right: 5%;
+        padding-right: 3%;
         /* flex-direction: column;
         flex-wrap: nowrap; */
         overflow-y: scroll;
