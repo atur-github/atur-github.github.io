@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Note Writing</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@100;200;300;400;500&display=swap" rel="stylesheet">
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+            integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <div class="wrapper">
+            <aside class="aside-1">
+                <header class="user-info">
+                    <img src="./user-icon.jpg" alt="" />
+                    <p>Welcome User!</p>
+                </header>
+                <section class="menu-items">
+                  <a href="#" class="menu-item__link active">
+                      <i class="fas fa-border-all"></i>
+                      <span class="menu-item__text">Overview</span>
+                  </a>
+                  <a href="#" class="menu-item__link">
+                      <i class="far fa-calendar"></i>
+                      <span class="menu-item__text">Tasks</span>
+                  </a>
+                  <a href="#" class="menu-item__link">
+                      <i class="far fa-list-alt"></i>
+                      <span class="menu-item__text">Documents</span>
+                  </a>
+                  <a href="#" class="menu-item__link">
+                      <i class="far fa-clipboard"></i>
+                      <span class="menu-item__text">Notes</span>
+                  </a>
+                  <a href="#" class="menu-item__link">
+                    <i class="fas fa-code-branch"></i>
+                    <span class="menu-item__text">Output</span>
+                  </a>
+                  <a href="#" class="menu-item__link">
+                    <i class="fas fa-headset"></i>
+                    <span class="menu-item__text">Support</span>
+                </a>
+                </section>
+                <section class="categories">
+                  <ul>
+                    <li class="category-item">
+                      <span class="bullet bullet-orange"></span>
+                      <a href="#" class="category-item__link">
+                        Projects
+                      </a>
+                    </li>
+                    <li class="category-item">
+                      <span class="bullet bullet-blue"></span>
+                      <a href="#" class="category-item__link">
+                        Buisiness
+                      </a>
+                    </li>
+                    <li class="category-item">
+                      <span class="bullet bullet-yellow"></span>
+                      <a href="#" class="category-item__link">
+                        Personal
+                      </a>
+                    </li>
+                    <li class="category-item">
+                      <span><i class="fas fa-plus"></i></span>
+                      <a href="#" class="category-item__link">Add new</a>
+                    </li>
+                  </ul>
+                </section>
+                <footer class="sidebar-footer">
+                  <div class="social-items">
+                    <a href="#" class="social-item">
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-item">
+                      <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-item">
+                      <i class="fab fa-linkedin-in"></i>
+                    </a>
+                  </div>
+                  <p class="copy-right-text">2021 Atour Eisayans</p>
+                </footer>
+            </aside>
+            <main class="main-panel">
+              <header class="top-header">
+                <div class="search-box">
+                  <span class="search-icon"><i class="fas fa-search"></i></span>
+                  <input type="search" placeholder="Search" class="search-input">
+                </div>
+                <div class="header-icons">
+                  <img src="./user-icon.jpg" alt="User Image">
+                  <p>Hello, Peter!</p>
+                  <span class="notification-icon"><i class="far fa-bell has-notification"></i></span>
+                </div>
+              </header>
+              <section class="main-content">
+                <header class="notes-header">
+                  <div class="categories-filter">
+                    <a href="#" class="active">All</a><a href="#">Projects</a><a href="#">Buisiness</a><a href="#">Personal</a>
+                  </div>
+                  <div class="notes-actions">
+                    <a href="#" class="notes-action" title="Add new note">
+                      <i class="fas fa-plus"></i>
+                      <span>Add new note</span>
+                    </a>
+                  </div>
+                </header>
+                <section class="notes-wrapper">
+                  <div class="note">
+                    <p class="note-date">23 June, 2017</p>
+                    <h3 class="note-title"><span class="bullet bullet-orange"></span>Title</h3>
+                    <div class="note-content">
+                      <p>
+                        This is content
+                        This is content
+                        This is content
+                        This is content
+                        This is content
+                        This is content
+                        This is content
+                        This is content
+                        This is content
+                        This is content
+                        This is content
+                        This is content
+                        This is content
+                        This is content
+                        This is content
+                      </p>
+                    </div>
+                  </div>
+                  <div class="note">
+                    <p class="note-date">23 June, 2017</p>
+                    <h3 class="note-title"><span class="bullet bullet-green"></span>Title
+                      This is also title
+                      This is also title
+                      This is also title
+                      This is also title
+                      This is also title
+                    </h3>
+                  </div>
+                  <div class="note">
+                    <p class="note-date">23 June, 2017</p>
+                    <h3 class="note-title"><span class="bullet bullet-blue"></span>Title</h3>
+                    <img class="note-image" src="./Tulips.jpg" alt="Nice Flowers" />
+                  </div>
+                  <div class="note">
+                    <p class="note-date">23 June, 2017</p>
+                    <h3 class="note-title"><span class="bullet bullet-orange"></span>Title</h3>
+                    <div class="note-content">
+                      <p>
+                        This is content
+                        This is content
+                        This is content
+                        This is content
+                        This is content
+                        This is content
+                        This is content
+                        This is content
+                        This is content
+                        This is content
+                        This is content
+                        This is content
+                        This is content
+                        This is content
+                        This is content
+                      </p>
+                    </div>
+                  </div>
+                  <div class="note">
+                    <p class="note-date">23 June, 2017</p>
+                    <h3 class="note-title"><span class="bullet bullet-green"></span>Title
+                      This is also title
+                      This is also title
+                      This is also title
+                      This is also title
+                      This is also title
+                    </h3>
+                  </div>
+                  <div class="note">
+                    <p class="note-date">23 June, 2017</p>
+                    <h3 class="note-title"><span class="bullet bullet-blue"></span>Title</h3>
+                    <img class="note-image" src="./Tulips.jpg" alt="Nice Flowers" />
+                  </div>
+                  <div class="note">
+                    <p class="note-date">23 June, 2017</p>
+                    <h3 class="note-title"><span class="bullet bullet-orange"></span>Title</h3>
+                    <div class="note-content">
+                      <p>
+                        This is content
+                        This is content
+                        This is content
+                        This is content
+                        This is content
+                        This is content
+                        This is content
+                        This is content
+                        This is content
+                        This is content
+                        This is content
+                        This is content
+                        This is content
+                        This is content
+                        This is content
+                      </p>
+                    </div>
+                  </div>
+                  <div class="note">
+                    <p class="note-date">23 June, 2017</p>
+                    <h3 class="note-title"><span class="bullet bullet-green"></span>Title
+                      This is also title
+                      This is also title
+                      This is also title
+                      This is also title
+                      This is also title
+                    </h3>
+                  </div>
+                  <div class="note">
+                    <p class="note-date">23 June, 2017</p>
+                    <h3 class="note-title"><span class="bullet bullet-blue"></span>Title</h3>
+                    <img class="note-image" src="./Tulips.jpg" alt="Nice Flowers" />
+                  </div>
+                  <div class="note">
+                    <p class="note-date">23 June, 2017</p>
+                    <h3 class="note-title"><span class="bullet bullet-orange"></span>Title</h3>
+                    <div class="note-content">
+                      <p>
+                        This is content
+                        This is content
+                        This is content
+                        This is content
+                        This is content
+                        This is content
+                        This is content
+                        This is content
+                        This is content
+                        This is content
+                        This is content
+                        This is content
+                        This is content
+                        This is content
+                        This is content
+                      </p>
+                    </div>
+                  </div>
+                  <div class="note">
+                    <p class="note-date">23 June, 2017</p>
+                    <h3 class="note-title"><span class="bullet bullet-green"></span>Title
+                      This is also title
+                      This is also title
+                      This is also title
+                      This is also title
+                      This is also title
+                    </h3>
+                  </div>
+                  <div class="note">
+                    <p class="note-date">23 June, 2017</p>
+                    <h3 class="note-title"><span class="bullet bullet-blue"></span>Title</h3>
+                    <img class="note-image" src="./Tulips.jpg" alt="Nice Flowers" />
+                  </div>
+                </section>
+              </section>
+            </main>
+        </div>
+    </body>
+    <script src="scripts.js"></script>
+</html>
