@@ -1,606 +1,290 @@
-:root {
-    --main-color: #8881d8;
-    --main-dark-color: #6a61bf;
-    --aside-bg-color: #8881d8;
-    --aside-dark-color: #6a61bf;
-    --aside-section-seperator: #bababa;
-    --scroll-thumb: #8881d8;
-    --scroll-track: #fff; 
-    --main-bg-color: #f9f9f9;
-    --blue: #46d8ff;
-    --orange: #fd9947;
-    --yellow: #ffcc62;
-    --green: #27e336;
-    --light-gray: #aaa;
-    --dark-gray: #8a8a8a;
-    --red: #c00;
-    --white: #fff;
-    --text-white: #fff;
-    --text-purple: #5f5c9d;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'M PLUS 1', sans-serif;
-    font-weight: 300;
-    overflow: hidden;
-}
-
-p {
-    font-weight: 300;
-}
-
-.wrapper {
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-}
-
-.main-nav {
-    display: none;
-}
-
-.aside-1 {
-    background-color: var(--aside-bg-color);
-    overflow: hidden;
-    flex-shrink: 0;
-    color: var(--text-white);
-    display: flex;
-    flex-direction: column;
-}
-
-.menu-container {
-    flex-grow: 1;
-}
-
-.scrollable {
-    overflow-y: auto;
-    overflow-x: hidden;
-    scrollbar-width: thin;
-    scrollbar-color: var(--scroll-thumb) var(--scroll-track);
-}
-
-.scrollable::-webkit-scrollbar-track
-{
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-	box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-	background-color: var(--scroll-track);
-    border-radius: 10px;
-}
-
-.scrollable::-webkit-scrollbar
-{
-	width: 5px;
-	background-color: var(--scroll-track);
-}
-
-.scrollable::-webkit-scrollbar-thumb
-{
-	background-color: var(--scroll-thumb);
-}
-
-.user-info {
-    background-color: var(--aside-dark-color);
-    width: 100%;
-    height: 70px;
-    flex-grow: 0;
-    flex-shrink: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    padding: .7rem 1.5rem;
-}
-
-.user-info img {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-}
-
-.user-info p {
-    padding-left: 1rem;
-    /* color: var(--text-white); */
-}
-
-
-.aside-1 section:first-of-type {
-    padding: 1rem 0;
-    /* border-bottom: 1px solid #aaa; */
-}
-
-.aside-1 section::after {
-    content: "";
-    display: block;
-    height: 1px;
-    background-color: var(--aside-section-seperator);
-    position: relative;
-    width: 80%;
-    left: 10%;
-    margin-top: 1rem;
-}
-
-.menu-item__link {
-    display: block;
-    padding: .7rem 2rem;
-    border-left: 3px solid transparent;
-    text-decoration: none;
-    /* color: var(--text-white); */
-    position: relative;
-    font-size: .85rem;
-    font-weight: 400;
-    transition: border-left-color .3s;
-}
-
-.menu-item__link i {
-    width: 30px;
-}
-
-.menu-item__link:link,
-.menu-item__link:visited {
-    text-decoration: none;
-    color: var(--text-white);
-}
-
-.menu-item__link:active,
-.menu-item__link:hover {
-    font-weight: 500;
-    border-left-color: var(--white);
-    /* box-shadow: inset 0 0 2px var(--white); */
-}
-
-.menu-items .menu-item__link.active {
-    border-left-color: var(--white);
-    /* position: relative; */
-}
-
-/* I commented this part of code because I made left menu scrollable. If we remove that feature, we can use this part */
-/* 
-.aside-1 {
-    overflow-x: visible;
-}
-
-.menu-items .active.menu-item__link::after {
-    content: "";
-    position: absolute;
-    right: -7px;
-    top:50%;
-    transform: translate(0, -50%);
-    width: 0;
-    height: 3px;
-    border-top: 20px solid transparent;
-    border-left: 7px solid var(--main-color);
-    border-bottom: 20px solid transparent;
-}  */
-
-.categories ul {
-    list-style: none;
-    font-size: .8rem;
-}
-
-.category-item {
-    display: block;
-    padding: .5rem 2rem;
-    transition: border-bottom-color .3s;
-}
-
-.category-item .category-item__link{
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: border-bottom .3s;
-    /* color: var(--text-white); */
-}
-
-.category-item .category-item__link:visited,
-.category-item .category-item__link:link {
-    text-decoration: none;
-    color: var(--text-white);
-}
-
-.category-item .category-item__link:hover,
-.category-item .category-item__link:active {
-    border-bottom-color: var(--white);
-}
-
-.bullet,
-.category-item > span {
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    border-radius: 5px;
-    margin-right: .5rem;
-    color: var(--text-white);
-}
-
-.bullet.bullet-orange {
-    background-color: var(--orange);
-}
-
-.bullet.bullet-green {
-    background-color: var(--green);
-}
-
-.bullet.bullet-blue {
-    background-color: var(--blue);
-}
-
-.bullet.bullet-yellow {
-    background-color: var(--yellow);
-}
-
-.add-category-item__link {
-    text-decoration: none;
-    /* color: var(--text-white); */
-}
-
-footer.sidebar-footer {
-    padding: 1.5rem 2rem;
-    flex-grow: 0;
-    flex-shrink: 0;
-    justify-self: flex-end;
-}
-
-.copy-right-text {
-    font-size: .7rem;
-    /* color: var(--text-white); */
-    font-weight: 300;
-}
-
-.social-items {
-    margin-bottom: .5rem;
-}
-
-.social-items .social-item {
-    color: var(--text-white);
-    font-size: .8rem;
-    margin-right: .6rem;
-    text-decoration: none;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-.main-panel {
-    background-color: var(--main-bg-color);
-    flex-grow: 1;
-    padding-bottom: 2rem;
-}
-
-.top-header {
-    height: 70px;
-    padding: 1rem 3rem;
-    background-color: var(--white);
-    box-shadow: 1px 1px 2px var(--light-gray);
-    display: flex;
-    justify-content: space-between;
-}
-
-.search-box {
-    position: relative;
-}
-
-.search-box input {
-    height: 100%;
-    padding: .5rem .3rem .5rem 2.2rem;
-    font-size: 1rem;
-    border: none;
-}
-
-.search-box input:focus {
-    outline: none;
-}
-
-.search-icon {
-    position: absolute;
-    font-size: 1.5rem;
-    top: 0;
-    color: var(--dark-gray);
-    vertical-align: super;
-}
-
-.header-icons {
-    display: flex;
-    align-items: center;
-}
-
-.header-icons img {
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-}
-
-.header-icons p {
-    padding-left: 1rem;
-    padding-right: 2rem;
-    display: inline-block;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.header-icons span {
-    font-size: 1.5rem;
-}
-
-.notification-icon {
-    cursor: pointer;
-    position: relative;
-}
-
-.notification-icon .has-notification::after {
-    content: "";
-    display: block;
-    position: absolute;
-    border: 4px solid var(--red);
-    border-radius: 4px;
-    top: 0;
-    right: 0;
-}
-
-.main-content {
-    height: 95%;
-    padding: 1rem 2rem;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content:flex-start;
-    background-color: transparent;
-}
-
-.notes-header {
-    background-color: transparent;
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem 2rem 1rem 0;
-    font-size: .8rem;
-    order: 1;
-    flex: 0 0;
-}
-
-.notes-header .categories-filter {
-    background-color: transparent;
-}
-
-.notes-header .categories-filter a {
-    text-decoration: none;
-    padding: .4rem 1rem;
-    border-radius: 4px;
-    font-weight: 400;
-    transition: background-color .3s;
-}
-
-.notes-header .categories-filter a:link,
-.notes-header .categories-filter a:visited {
-    text-decoration: none;
-    color: inherit;
-}
-
-.notes-header .categories-filter a.active {
-    background-color: var(--main-color);
-    color: var(--text-white);
-}
-
-.notes-header .categories-filter a:hover,
-.notes-header .categories-filter a:active {
-    background-color: var(--main-dark-color);
-    color: var(--text-white);
-}
-
-.notes-action {
-    text-decoration: none;
-    border: 1px solid transparent;
-    transition: border-bottom .3s;
-}
-
-.notes-action:link,
-.notes-action:visited {
-    text-decoration: none;
-    color: inherit;
-    color: var(--text-purple)
-}
-
-.notes-action:hover,
-.notes-action:active {
-    border-bottom-color: var(--main-color);
-}
-
-.notes-action i {
-    margin-right: .3rem;
-}
-
-.notes-wrapper {
-    /* max-height: 300px; */
-    margin-bottom: 1rem;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-content: flex-start;
-    background-color: transparent;
-    padding: .7rem 0;
-    gap: 1rem 1rem;
-    /* overflow-y: auto; */
-    order: 2;
-    flex-grow: 1;
-}
-
-/* 
-.notes-wrapper::-webkit-scrollbar-track {
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-	box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-	background-color: var(--scroll-track);
-    
-}
-
-.notes-wrapper::-webkit-scrollbar {
-	width: 5px;
-	background-color: var(--scroll-track);
-}
-
-.notes-wrapper::-webkit-scrollbar-thumb {
-	background-color: var(--scroll-thumb);
-    border-radius: 10px;
-} */
-
-.note {
-    width: 23%;
-    min-width: 200px;
-    height: 200px;
-    padding: 1rem 1rem 2rem 1rem;
-    overflow: hidden;
-    background-color: var(--white);
-    border-radius: 2px;
-    box-shadow: 2px 2px 5px var(--dark-gray);
-}
-
-.note .note-date {
-    font-size: .7rem;
-    font-weight: 300;
-    margin-bottom: .7rem;
-}
-
-.note .note-title {
-    font-size: 1.2rem;
-    font-weight: 400;
-    max-height: 110px;
-    margin-bottom: .7rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.note .note-content {
-    font-size: .9rem;
-    /* text-align: justify; */
-    overflow: hidden;
-}
-
-.note .note-content p {
-    max-height: 80px;
-    overflow: hidden;
-    overflow-wrap: break-word;
-}
-
-.note .note-image {
-    height: 90px;
-    width: 100%;
-}
-
-@media screen and (max-width: 1200px) {
-    .note {
-        width: 30%;
-    }
-}
-
-@media screen and (max-width: 920px) {
-    .note {
-        width: 47%;
-    }
-}
-
-@media screen and (max-width: 600px){
-    .main-nav {
-        display: block;
-        width: 100%;
-        background-color: var(--main-color);
-    }
-
-    .main-nav .toggle-link {
-        display: inline-block;
-        text-decoration: none;
-        color: var(--text-white);
-        padding: .5rem 1rem;
-        vertical-align: middle;
-        cursor: pointer;
-        
-    }
-
-    .main-nav .toggle-link::visited,
-    .main-nav .toggle-link::active {
-        color: var(--text-white);
-    }
-
-    .main-nav .toggle-link i {
-        font-size: 1.4rem;
-        padding: .2rem;
-    }
-
-    .main-content {
-        padding-right: 1rem;
-        padding-left: 1rem;
-    }
-
-    .wrapper {
-        /* flex-direction: column; */
-    }
-
-    .aside-1 {
-        display: none;
-    }
-
-    .main-panel {
-        flex: 1 100%;
-    }
-
-    .search-box {
-        display: none;
-    }
-
-    .top-header {
-        justify-content: flex-end;
-        padding: .5rem 1.5rem;
-        height: fit-content;
-    }
-
-    .header-icons p,
-    .header-icons span {
-        display: none;
-    }
-
-    .notes-action span {
-        display: none;
-    }
-
-    .notes-action i {
-        margin-right: 0;
-    }
-
-    .notes-wrapper {
-        padding-right: 5%;
-        /* flex-direction: column;
-        flex-wrap: nowrap; */
-        overflow-y: scroll;
-    }
-
-    .notes-header {
-        padding-right: 0;
-    }
-
-    .notes-header .categories-filter a {
-        padding-right: .7rem;
-        padding-left: .7rem;
-    }
-
-    .note {
-        width: 100%;
-        height: 230px;
-    }
-
-    .note .note-image {
-        height: 120px;
-    }
-}
-
-
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Note Writing</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@100;200;300;400;500&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+            integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <nav class="main-nav">
+            <a href="#" class="toggle-link">
+                <i class="fas fa-bars"></i>
+            </a>
+            <div class="collapse-menu"></div>
+        </nav>
+        <div class="wrapper">
+            <aside class="aside-1 scrollable">
+                <header class="user-info">
+                    <img src="./user-icon.jpg" alt="" />
+                    <p>Welcome User!</p>
+                </header>
+                <div class="menu-container">
+                    <section class="menu-items">
+                        <a href="#" class="menu-item__link active">
+                            <i class="fas fa-border-all"></i>
+                            <span class="menu-item__text">Overview</span>
+                        </a>
+                        <a href="#" class="menu-item__link">
+                            <i class="far fa-calendar"></i>
+                            <span class="menu-item__text">Tasks</span>
+                        </a>
+                        <a href="#" class="menu-item__link">
+                            <i class="far fa-list-alt"></i>
+                            <span class="menu-item__text">Documents</span>
+                        </a>
+                        <a href="#" class="menu-item__link">
+                            <i class="far fa-clipboard"></i>
+                            <span class="menu-item__text">Notes</span>
+                        </a>
+                        <a href="#" class="menu-item__link">
+                            <i class="fas fa-code-branch"></i>
+                            <span class="menu-item__text">Output</span>
+                        </a>
+                        <a href="#" class="menu-item__link">
+                            <i class="fas fa-headset"></i>
+                            <span class="menu-item__text">Support</span>
+                        </a>
+                    </section>
+                    <section class="categories">
+                        <ul>
+                            <li class="category-item">
+                                <span class="bullet bullet-orange"></span>
+                                <a href="#" class="category-item__link">
+                                    Projects
+                                </a>
+                            </li>
+                            <li class="category-item">
+                                <span class="bullet bullet-blue"></span>
+                                <a href="#" class="category-item__link">
+                                    Buisiness
+                                </a>
+                            </li>
+                            <li class="category-item">
+                                <span class="bullet bullet-yellow"></span>
+                                <a href="#" class="category-item__link">
+                                    Personal
+                                </a>
+                            </li>
+                            <li class="category-item">
+                                <span><i class="fas fa-plus"></i></span>
+                                <a href="#" class="category-item__link">Add new</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <footer class="sidebar-footer">
+                    <div class="social-items">
+                        <a href="#" class="social-item">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-item">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-item">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                    <p class="copy-right-text">2021 Atour Eisayans</p>
+                </footer>
+            </aside>
+            <main class="main-panel">
+                <header class="top-header">
+                    <div class="search-box">
+                        <span class="search-icon"
+                            ><i class="fas fa-search"></i
+                        ></span>
+                        <input
+                            type="search"
+                            placeholder="Search"
+                            class="search-input"
+                        />
+                    </div>
+                    <div class="header-icons">
+                        <img src="./user-icon.jpg" alt="User Image" />
+                        <p>Hello, Peter!</p>
+                        <span class="notification-icon"
+                            ><i class="far fa-bell has-notification"></i
+                        ></span>
+                    </div>
+                </header>
+                <section class="main-content">
+                    <header class="notes-header">
+                        <div class="categories-filter">
+                            <a href="#" class="active">All</a
+                            ><a href="#">Projects</a><a href="#">Buisiness</a
+                            ><a href="#">Personal</a>
+                        </div>
+                        <div class="notes-actions">
+                            <a
+                                href="#"
+                                class="notes-action"
+                                title="Add new note"
+                            >
+                                <i class="fas fa-plus"></i>
+                                <span>Add new note</span>
+                            </a>
+                        </div>
+                    </header>
+                    <section class="notes-wrapper scrollable">
+                        <div class="note">
+                            <p class="note-date">23 June, 2017</p>
+                            <h3 class="note-title">
+                                <span class="bullet bullet-orange"></span>Title
+                            </h3>
+                            <div class="note-content">
+                                <p>
+                                    This is content This is content This is
+                                    content This is content This is content This
+                                    is content This is content This is content
+                                    This is content This is content This is
+                                    content This is content This is content This
+                                    is content This is content
+                                </p>
+                            </div>
+                        </div>
+                        <div class="note">
+                            <p class="note-date">23 June, 2017</p>
+                            <h3 class="note-title">
+                                <span class="bullet bullet-green"></span>Title
+                                This is also title This is also title This is
+                                also title This is also title This is also title
+                            </h3>
+                        </div>
+                        <div class="note">
+                            <p class="note-date">23 June, 2017</p>
+                            <h3 class="note-title">
+                                <span class="bullet bullet-blue"></span>Title
+                            </h3>
+                            <img
+                                class="note-image"
+                                src="./Tulips.jpg"
+                                alt="Nice Flowers"
+                            />
+                        </div>
+                        <div class="note">
+                            <p class="note-date">23 June, 2017</p>
+                            <h3 class="note-title">
+                                <span class="bullet bullet-orange"></span>Title
+                            </h3>
+                            <div class="note-content">
+                                <p>
+                                    This is content This is content This is
+                                    content This is content This is content This
+                                    is content This is content This is content
+                                    This is content This is content This is
+                                    content This is content This is content This
+                                    is content This is content
+                                </p>
+                            </div>
+                        </div>
+                        <div class="note">
+                            <p class="note-date">23 June, 2017</p>
+                            <h3 class="note-title">
+                                <span class="bullet bullet-green"></span>Title
+                                This is also title This is also title This is
+                                also title This is also title This is also title
+                            </h3>
+                        </div>
+                        <div class="note">
+                            <p class="note-date">23 June, 2017</p>
+                            <h3 class="note-title">
+                                <span class="bullet bullet-blue"></span>Title
+                            </h3>
+                            <img
+                                class="note-image"
+                                src="./Tulips.jpg"
+                                alt="Nice Flowers"
+                            />
+                        </div>
+                        <div class="note">
+                            <p class="note-date">23 June, 2017</p>
+                            <h3 class="note-title">
+                                <span class="bullet bullet-orange"></span>Title
+                            </h3>
+                            <div class="note-content">
+                                <p>
+                                    This is content This is content This is
+                                    content This is content This is content This
+                                    is content This is content This is content
+                                    This is content This is content This is
+                                    content This is content This is content This
+                                    is content This is content
+                                </p>
+                            </div>
+                        </div>
+                        <div class="note">
+                            <p class="note-date">23 June, 2017</p>
+                            <h3 class="note-title">
+                                <span class="bullet bullet-green"></span>Title
+                                This is also title This is also title This is
+                                also title This is also title This is also title
+                            </h3>
+                        </div>
+                        <div class="note">
+                            <p class="note-date">23 June, 2017</p>
+                            <h3 class="note-title">
+                                <span class="bullet bullet-blue"></span>Title
+                            </h3>
+                            <img
+                                class="note-image"
+                                src="./Tulips.jpg"
+                                alt="Nice Flowers"
+                            />
+                        </div>
+                        <div class="note">
+                            <p class="note-date">23 June, 2017</p>
+                            <h3 class="note-title">
+                                <span class="bullet bullet-orange"></span>Title
+                            </h3>
+                            <div class="note-content">
+                                <p>
+                                    This is content This is content This is
+                                    content This is content This is content This
+                                    is content This is content This is content
+                                    This is content This is content This is
+                                    content This is content This is content This
+                                    is content This is content
+                                </p>
+                            </div>
+                        </div>
+                        <div class="note">
+                            <p class="note-date">23 June, 2017</p>
+                            <h3 class="note-title">
+                                <span class="bullet bullet-green"></span>Title
+                                This is also title This is also title This is
+                                also title This is also title This is also title
+                            </h3>
+                        </div>
+                        <div class="note">
+                            <p class="note-date">23 June, 2017</p>
+                            <h3 class="note-title">
+                                <span class="bullet bullet-blue"></span>Title
+                            </h3>
+                            <img
+                                class="note-image"
+                                src="./Tulips.jpg"
+                                alt="Nice Flowers"
+                            />
+                        </div>
+                    </section>
+                </section>
+            </main>
+        </div>
+    </body>
+    <script src="scripts.js"></script>
+</html>
